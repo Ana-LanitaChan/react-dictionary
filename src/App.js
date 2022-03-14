@@ -9,7 +9,16 @@ function App() {
         <Dictionary />
         <footer>
           <hr />
-          <small>This code is open source.</small>
+          <small>
+            This code is{" "}
+            <a
+              href="https://github.com/Ana-LanitaChan/react-dictionary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              open source.
+            </a>
+          </small>
         </footer>
       </div>
     </div>
