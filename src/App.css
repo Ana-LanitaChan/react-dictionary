@@ -1,1 +1,12 @@
+body .container {
+  margin-top: 45px;
+  width: 72%;
+}
 
+h1 {
+  margin-bottom: 18px;
+}
+
+footer {
+  text-align: center;
+}
