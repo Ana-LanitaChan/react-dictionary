@@ -2,7 +2,6 @@ import React from "react";
 import Meaning from "./Meaning";
 
 export default function Definitions(props) {
-  console.log(props.data);
   if (props.data) {
     return (
       <div className="Definitions">
