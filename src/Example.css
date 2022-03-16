@@ -1,5 +1,9 @@
-.Meaning em {
+.Example strong {
   margin-top: 12px;
+  color: gray;
+}
+
+.Example em {
   color: #0e6efd;
   opacity: 50%;
 }
