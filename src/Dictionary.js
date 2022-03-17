@@ -11,9 +11,18 @@ export default function Dictionary(props) {
     setDefinition(response.data[0]);
   }
 
+  function handlePexResponse(response) {
+    console.log(response);
+  }
+
   function call() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleResponse);
+
+    let pexApiKey = "563492ad6f917000010000015a466f2735f849679b231a099ed07e15";
+    let pexApiUrl = `https://api.pexels.com/v1/search?query=${keyword}`;
+    const headers = { Authorization: `Bearer ${pexApiKey}` };
+    return axios.get(pexApiUrl, { headers: headers }).then(handlePexResponse);
   }
 
   function handleSubmit(event) {
