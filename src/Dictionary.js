@@ -46,6 +46,7 @@ export default function Dictionary(props) {
               placeholder="Search for a definition"
               id="input-search"
               onChange={handleKeyword}
+              defaultValue={props.defaultkeyword}
             />
             <input
               className="btn btn-primary submit-style"
@@ -54,6 +55,9 @@ export default function Dictionary(props) {
               id="submit"
             />
           </div>
+          <small className="">
+            <em>Search for a definition. Ex: nugget, cat, etc.</em>
+          </small>
         </form>
         <Definitions data={definition} />
       </div>
