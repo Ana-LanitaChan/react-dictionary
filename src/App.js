@@ -10,13 +10,29 @@ function App() {
         <footer>
           <hr />
           <small>
-            This code is{" "}
+            Coded by Ana Aguilar. This code is{" "}
             <a
               href="https://github.com/Ana-LanitaChan/react-dictionary"
               target="_blank"
               rel="noopener noreferrer"
             >
-              open source.
+              open source,
+            </a>{" "}
+            using{" "}
+            <a
+              href="https://dictionaryapi.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Dictionary api
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.pexels.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Pexels api.
             </a>
           </small>
         </footer>

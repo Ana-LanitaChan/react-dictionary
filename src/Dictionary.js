@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Definitions from "./Definitions";
+import Photos from "./Photos";
 
 export default function Dictionary(props) {
   let [keyword, setKeyword] = useState(props.defaultkeyword);
   let [definition, setDefinition] = useState(null);
   let [loading, setLoading] = useState(false);
+  let [photocall, setPhotocall] = useState(null);
 
   function handleResponse(response) {
     setDefinition(response.data[0]);
   }
 
   function handlePexResponse(response) {
-    console.log(response);
+    setPhotocall(response.data.photos);
   }
 
   function call() {
@@ -20,7 +22,7 @@ export default function Dictionary(props) {
     axios.get(apiUrl).then(handleResponse);
 
     let pexApiKey = "563492ad6f917000010000015a466f2735f849679b231a099ed07e15";
-    let pexApiUrl = `https://api.pexels.com/v1/search?query=${keyword}`;
+    let pexApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=3`;
     const headers = { Authorization: `Bearer ${pexApiKey}` };
     return axios.get(pexApiUrl, { headers: headers }).then(handlePexResponse);
   }
@@ -69,6 +71,7 @@ export default function Dictionary(props) {
           </small>
         </form>
         <Definitions data={definition} />
+        <Photos photos={photocall} />
       </div>
     );
   } else {
